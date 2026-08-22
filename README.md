@@ -12,6 +12,9 @@ import { avatar } from 'inkfaces';
 document.body.innerHTML = avatar('ada@example.com');
 ```
 
+**[Try it](https://manurrdd.github.io/inkfaces/)** — type a seed, pin the traits you care
+about, download the SVG or the PNG.
+
 ## Why another avatar generator
 
 Most generators assemble a face out of a fixed set of drawn pieces, so every nose in
@@ -87,8 +90,15 @@ COMBINATIONS;        // 20_797_… (a bigint)
 For when you cannot run JavaScript where the avatar is needed.
 
 ```
-GET /v1/{seed}.svg?hair=curly&glasses=round&size=256
+GET https://inkfaces.manurrdd.workers.dev/v1/{seed}.svg?hair=curly&glasses=round&size=256
 ```
+
+```html
+<img src="https://inkfaces.manurrdd.workers.dev/v1/ada.svg?size=96" alt="" width="96">
+```
+
+Without the `/v1/` prefix it answers with its own documentation, including the full
+trait catalogue.
 
 Responses are pure functions of the URL and are cached immutably. The worker in
 `apps/api` is a single file with no bindings, no storage and nothing to log — deploy

@@ -1,6 +1,6 @@
 {
   "name": "inkfaces",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Hand-drawn procedural avatars as SVG. Deterministic, dependency-free, works anywhere.",
   "keywords": [
     "avatar",
