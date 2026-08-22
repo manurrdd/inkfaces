@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>InkFaces — hand-drawn avatars from any seed</title>
+    <meta
+      name="description"
+      content="Deterministic hand-drawn avatars as SVG. Same seed, same face. Pin the traits you care about and let the rest follow the seed."
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>InkFaces</h1>
+      <p class="tagline">Hand-drawn avatars from any seed. Same seed, same face.</p>
+    </header>
+
+    <main>
+      <section class="stage">
+        <div class="portrait" id="portrait"></div>
+        <div class="seedbar">
+          <label class="sr-only" for="seed">Seed</label>
+          <input id="seed" type="text" spellcheck="false" autocomplete="off" />
+          <button id="shuffle" type="button">Shuffle</button>
+        </div>
+        <div class="actions">
+          <button id="reset" type="button">Unpin all</button>
+          <button id="svg" type="button">Download SVG</button>
+          <button id="png" type="button">Download PNG</button>
+          <button id="copy" type="button">Copy code</button>
+        </div>
+        <p class="hint" id="hint"></p>
+      </section>
+
+      <section class="controls" id="controls" aria-label="Traits"></section>
+    </main>
+
+    <section class="sheet" aria-label="More faces">
+      <div class="sheet-head">
+        <h2>Others from the same catalogue</h2>
+        <button id="reroll" type="button">New page</button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <footer>
+      <p id="count"></p>
+      <p>
+        MIT licensed. Every avatar it draws is yours, no attribution required.
+        <a href="https://github.com/inkfaces/inkfaces">Source</a>
+      </p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

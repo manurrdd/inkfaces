@@ -1,0 +1,5 @@
+name = "inkfaces-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# No bindings, no secrets, no storage: the worker is a pure function of the URL.

@@ -1,0 +1,60 @@
+{
+  "name": "inkfaces",
+  "version": "0.1.0",
+  "description": "Hand-drawn procedural avatars as SVG. Deterministic, dependency-free, works anywhere.",
+  "keywords": [
+    "avatar",
+    "avatars",
+    "svg",
+    "generator",
+    "identicon",
+    "hand-drawn",
+    "doodle",
+    "procedural"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inkfaces/inkfaces.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/inkfaces/inkfaces#readme",
+  "bugs": {
+    "url": "https://github.com/inkfaces/inkfaces/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
