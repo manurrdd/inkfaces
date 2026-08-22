@@ -1,3 +1,4 @@
+import './style.css';
 import { COLOR_KEYS, COMBINATIONS, FEATURE_KEYS, OPTIONS, SWATCHES, avatar, traits, type Options } from 'inkfaces';
 
 const el = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;

@@ -15,12 +15,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inkfaces/inkfaces.git",
+    "url": "git+https://github.com/manurrdd/inkfaces.git",
     "directory": "packages/core"
   },
-  "homepage": "https://github.com/inkfaces/inkfaces#readme",
+  "homepage": "https://github.com/manurrdd/inkfaces#readme",
   "bugs": {
-    "url": "https://github.com/inkfaces/inkfaces/issues"
+    "url": "https://github.com/manurrdd/inkfaces/issues"
   },
   "type": "module",
   "sideEffects": false,
