@@ -127,11 +127,132 @@ button:hover {
 
 .controls {
   display: grid;
-  gap: 0.6rem;
+  gap: 0.15rem;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1rem;
+  padding: 0.6rem;
+}
+
+.trait {
+  border-bottom: 1px solid var(--line);
+}
+
+.trait:last-of-type {
+  border-bottom: 0;
+}
+
+.trait-head {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.4rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  text-align: left;
+}
+
+.trait-head:hover {
+  background: var(--paper);
+}
+
+.trait-head::after {
+  content: '';
+  flex: none;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-right: 1.5px solid var(--muted);
+  border-bottom: 1.5px solid var(--muted);
+  transform: translateY(-0.15em) rotate(-45deg);
+}
+
+.trait-head[aria-expanded='true']::after {
+  transform: translateY(0.05em) rotate(45deg);
+}
+
+.trait-name {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.trait-value {
+  margin-left: auto;
+  font-size: 0.875rem;
+}
+
+.trait-value.pinned::before {
+  content: '';
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: 0.35rem;
+  border-radius: 50%;
+  background: var(--accent);
+  vertical-align: 0.05em;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 0.4rem;
+  padding: 0.15rem 0.4rem 0.7rem;
+}
+
+.option {
+  display: grid;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  line-height: 0;
+}
+
+.thumb {
+  display: block;
+  overflow: hidden;
+}
+
+.option svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* The face is drawn in one square. Cropping it is how a brow reads at this size. */
+.option[data-framing='head'] svg {
+  transform: scale(1.35);
+  transform-origin: 50% 40%;
+}
+
+.option[data-framing='close'] svg {
+  transform: scale(2.1);
+  transform-origin: 50% 50%;
+}
+
+.option .name {
+  padding: 0.2rem 0.1rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.option[data-seeded] {
+  border-color: var(--accent);
+}
+
+.option[aria-pressed='true'] {
+  border-color: var(--ink);
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+}
+
+.option[aria-pressed='true'] .name {
+  color: var(--ink);
 }
 
 .row {
@@ -139,22 +260,12 @@ button:hover {
   grid-template-columns: 8.5rem minmax(0, 1fr);
   gap: 0.75rem;
   align-items: center;
+  padding: 0.35rem 0.4rem;
 }
 
-.row label,
 .rowlabel {
   color: var(--muted);
   font-size: 0.875rem;
-}
-
-select {
-  width: 100%;
-  padding: 0.4rem 0.5rem;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--paper);
-  color: inherit;
-  font: inherit;
 }
 
 .swatches {
@@ -232,4 +343,11 @@ footer a {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+/* One column: nothing to stick to, and a stuck portrait covers the traits. */
+@media (max-width: 760px) {
+  .stage {
+    position: static;
+  }
 }
