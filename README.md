@@ -1,8 +1,14 @@
 # InkFaces
 
+[![npm](https://img.shields.io/npm/v/inkfaces.svg)](https://www.npmjs.com/package/inkfaces)
+[![license](https://img.shields.io/npm/l/inkfaces.svg)](LICENSE)
+[![dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](packages/core/package.json)
+
 Hand-drawn avatars, generated. Give it a seed — a username, an email, an id — and it
 draws the same face every time, in wobbling ballpoint lines on off-register colour,
 as if someone had filled a page of a notebook with them.
+
+![A grid of fourteen hand-drawn avatars, each with different faces, hair, expressions and colours](.github/readme/banner.svg)
 
 No canvas, no fonts, no network, no dependencies. One function in, one SVG string out.
 
@@ -23,6 +29,8 @@ wobble of every line, the way the colour misses its outline, the tilt of the hea
 the placement of the features are all computed. Two faces with the same eyes are still
 two different drawings — which is the whole point of a style built on imperfection.
 
+![Four avatars, all with the same round eyes pinned but otherwise different seeds — four distinct faces](.github/readme/same-eyes.svg)
+
 ## Install
 
 ```bash
@@ -42,6 +50,10 @@ avatar('ada', { grain: false });                 // no paper texture
 dataUri('ada');                                  // data:image/svg+xml;utf8,…
 traits('ada');                                   // { hair: 'bob', eyes: 'dots', … }
 ```
+
+![The same seed, ada, drawn three ways: the plain default, with curly hair and round glasses pinned, and with paper grain turned off](.github/readme/options-demo.svg)
+
+*Left to right: `avatar('ada')` · `avatar('ada', { hair: 'curly', glasses: 'round' })` · `avatar('ada', { grain: false })`*
 
 Every trait you pin stays put; every trait you leave alone keeps following the seed.
 An unknown trait value is ignored rather than thrown, because these usually arrive
